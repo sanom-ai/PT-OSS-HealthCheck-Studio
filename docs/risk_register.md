@@ -8,7 +8,7 @@ Initial risk register for Pre-Phase. Each entry: id, description, likelihood, im
 ### R-001: Rule package quality
 - Likelihood: Medium
 - Impact: High
-- Mitigation: Create versioned rule package; test cases and calibration (PrecisionFab); CI validation
+- Mitigation: Create versioned rule package; test cases and calibration (ExampleOrg); CI validation
 - Owner: Product/Rules
 - Status: Open
 
@@ -34,3 +34,4 @@ Initial risk register for Pre-Phase. Each entry: id, description, likelihood, im
 - Status: Open
 
 (Expand register with probability scores, detection controls, and residual risk during Pre-Phase.)
+
