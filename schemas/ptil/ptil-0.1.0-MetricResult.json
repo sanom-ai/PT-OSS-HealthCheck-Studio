@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ptil-0.1.0-MetricResult",
+  "title": "MetricResult",
+  "type": "object",
+  "properties": {
+    "id": {"type":"string"},
+    "case_id": {"type":"string"},
+    "metric_name": {"type":"string"},
+    "value": {"type":["number","string"]},
+    "timestamp": {"type":"string","format":"date-time"}
+  },
+  "required": ["id","case_id","metric_name","value"]
+}
