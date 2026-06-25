@@ -1,0 +1,62 @@
+ELASTIC LICENSE v2
+
+Copyright © 2026 SA-NOM AI Co., Ltd.
+
+All rights to this Software are reserved, including all intellectual property rights therein.
+Licensor hereby grants to Licensee a non-exclusive, non-transferable, non-sublicensable license
+to use the Software subject to the following terms and conditions:
+
+TERMS AND CONDITIONS
+
+1. PERMITTED USE
+
+   You may use this Software to:
+   a) Execute the Software for internal business operations and purposes;
+   b) Deploy the Software in production environments;
+   c) Modify the Software to meet your specific needs;
+   d) Offer goods or services that use or incorporate the Software (B2B, B2B2C models);
+   e) Use the Software as a component or foundation for your own products or services.
+
+2. RESTRICTIONS
+
+   You may NOT:
+   a) Redistribute the Software source code, in whole or in part, to any third party;
+   b) Sublicense, transfer, or resell the Software itself as a standalone product
+      or service to competitors or external parties;
+   c) Remove, alter, or obscure any proprietary notices, labels, or marks;
+   d) Modify the Software and then redistribute the modified source code;
+   e) Disclose the Software's source code to unauthorized parties.
+
+3. COMMERCIAL LICENSING
+
+   For organizations wishing to redistribute, relicense, or use the Software under different terms,
+   a commercial license is available. Contact: licensing@sanomaiarch.com
+
+4. THIRD-PARTY COMPONENTS
+
+   The Software includes certain open-source components. Their respective licenses apply to those
+   components as specified in the THIRD-PARTY-LICENSES file or package documentation.
+
+5. DISCLAIMER OF WARRANTIES
+
+   THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. TERM AND TERMINATION
+
+   This License is effective until terminated. Your rights under this License will terminate
+   automatically without notice if you fail to comply with any term(s) of this License.
+   Upon termination, you must cease using the Software and destroy all copies in your possession.
+
+7. GOVERNING LAW
+
+   This License shall be governed by and construed in accordance with the laws of Thailand,
+   without regard to its conflict of law provisions.
+
+---
+
+For the full text of the Elastic License v2, please visit:
+https://www.elastic.co/licensing/elastic-license
