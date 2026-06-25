@@ -12,11 +12,9 @@
 
 ## 3 connector tiers
 
-Tier A (Native DCC): ต่อ API กับระบบ DCC ที่มี metadata ครบ — ไม่ copy ไฟล์
-
-Tier B (Cloud Folder): SharePoint/Drive ผ่าน OAuth — ต้อง human confirm
-
-Tier C (Portable): ZIP/manual upload — confidence โดนลดอัตโนมัติ
+- **Tier A** (Native DCC): ต่อ API กับระบบ DCC ที่มี metadata ครบ — ไม่ copy ไฟล์
+- **Tier B** (Cloud Folder): SharePoint/Drive ผ่าน OAuth — ต้อง human confirm
+- **Tier C** (Portable): ZIP/manual upload — confidence โดนลดอัตโนมัติ
 
 ## Evidence Index 
 เก็บ minimum 16 fields: evidence ID, source type, hash, PT-OSS category A-H, owner, approver, revision, effective date, quality, confidence impact
