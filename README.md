@@ -1,7 +1,4 @@
 # PT-OSS HealthCheck Studio
-
-**Platform Audit & Compliance for Enterprise Workflows — v0.1.0 (Pre‑Phase Foundations)**
-PT-OSS HealthCheck Studio is an Evidence-to-Care Platform that connects to existing document repositories and transforms organizational evidence into scored, traceable, and certifiable health-check reports. It is not a document management system
 ---
 
 ## ภาพรวมผลิตภัณฑ์
