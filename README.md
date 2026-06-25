@@ -209,20 +209,20 @@ pytest --cov=src --cov-report=html
 
 ## แผนการพัฒนา (Roadmap)
 
-Pre-Phase (3-4 สัปดาห์): 15 ADRs, NFR, risk register
+- **Pre-Phase**: 15 ADRs, NFR, risk register
 Pre‑Phase ✅ (v0.1.0 — เสร็จสมบูรณ์)
 - ✅ ADRs และสถาปัตยกรรม
 - ✅ PTIL schemas v0.1.0
 - ✅ Rule package v0.1.0
 - ✅ Unit tests (19 test cases)
 - ✅ CI/CD pipeline
-Phase 1 (สัปดาห์ 5-18): DRS Core MVP, Tier B+C connectors, Evidence Review Board
-Phase 2: Consultant Workbench, metadata overlay
-Phase 3: Diagnostic Engine ครบทุก metric
-Phase 4: DCC native integration, multi-tenant scale, penetration test
-Phase 5-6: Certification Portal, continuous monitoring
-Phase 7: AI Model Evolution — PT-OSS Gen 2 model, PTIL v1.0
-Phase 8: Production hardening, billing, i18n, WCAG 2.2
+- **Phase 1**: (สัปดาห์ 5-18): DRS Core MVP, Tier B+C connectors, Evidence Review Board
+- **Phase 2**: Consultant Workbench, metadata overlay
+- **Phase 3**: Diagnostic Engine ครบทุก metric
+- **Phase 4**: DCC native integration, multi-tenant scale, penetration test
+- **Phase 5-6**: Certification Portal, continuous monitoring
+- **Phase 7**: AI Model Evolution — PT-OSS Gen 2 model, PTIL v1.0
+- **Phase 8**: Production hardening, billing, i18n, WCAG 2.2
 
 ### Backlog
 - [ ] Real-time notifications & webhooks
