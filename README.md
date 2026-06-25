@@ -216,7 +216,7 @@ Pre‑Phase ✅ (v0.1.0 — เสร็จสมบูรณ์)
 - ✅ Rule package v0.1.0
 - ✅ Unit tests (19 test cases)
 - ✅ CI/CD pipeline
-- **Phase 1**: (สัปดาห์ 5-18): DRS Core MVP, Tier B+C connectors, Evidence Review Board
+- **Phase 1**: DRS Core MVP, Tier B+C connectors, Evidence Review Board
 - **Phase 2**: Consultant Workbench, metadata overlay
 - **Phase 3**: Diagnostic Engine ครบทุก metric
 - **Phase 4**: DCC native integration, multi-tenant scale, penetration test
