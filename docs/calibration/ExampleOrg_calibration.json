@@ -1,0 +1,26 @@
+{
+  "case_id": "exampleorg_private_baseline",
+  "name": "ExampleOrg",
+  "mode": "PRIVATE",
+  "organization_profile": {
+    "industry": "manufacturing",
+    "size": "SME"
+  },
+  "evidence_profile": {
+    "A": ["DelegationOfAuthority","OrgChart"],
+    "B": ["SOPs","RoleMatrix"],
+    "C": ["JobDescriptions"],
+    "D": ["SystemLogs"],
+    "E": ["KPIReports"],
+    "F": ["AccessControlMatrix"],
+    "G": ["BackupPolicy"],
+    "H": ["QualityRecords"]
+  },
+  "expected": {
+    "drs_min": 55.0,
+    "drs_max": 56.0,
+    "band": "GO_WITH_CAUTION",
+    "critical_alert_count": 1
+  },
+  "notes": "Sanitised example calibration case for regression testing. Replace with real calibration pack when available."
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ptil-0.1.0-EvidenceDocument",
+  "title": "EvidenceDocument",
+  "type": "object",
+  "properties": {
+    "id": {"type":"string"},
+    "tenant_id": {"type":"string"},
+    "source_id": {"type":"string"},
+    "filename": {"type":"string"},
+    "content_summary": {"type":"string"},
+    "created_at": {"type":"string","format":"date-time"},
+    "content": {"type":"string"}
+  },
+  "required": ["id","tenant_id","filename","created_at"]
+}

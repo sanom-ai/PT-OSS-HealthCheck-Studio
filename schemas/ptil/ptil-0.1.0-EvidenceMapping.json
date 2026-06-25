@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ptil-0.1.0-EvidenceMapping",
+  "title": "EvidenceMapping",
+  "type": "object",
+  "properties": {
+    "id": {"type":"string"},
+    "document_id": {"type":"string"},
+    "region": {"type":"object","properties":{"start":{},"end":{}},"additionalProperties":true},
+    "category": {"type":"string"},
+    "created_at": {"type":"string","format":"date-time"}
+  },
+  "required": ["id","document_id","category"]
+}

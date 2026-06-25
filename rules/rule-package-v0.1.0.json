@@ -1,0 +1,37 @@
+{
+  "schema_version": "ptoss-rule-package-0.1.0",
+  "package_version": "0.1.0",
+  "drs_categories": [
+    {"code": "A", "name": "Governance", "weight": 1.2},
+    {"code": "B", "name": "People & Roles", "weight": 1.1},
+    {"code": "C", "name": "Processes", "weight": 1.0},
+    {"code": "D", "name": "Technology", "weight": 0.9},
+    {"code": "E", "name": "Evidence & Logs", "weight": 1.3},
+    {"code": "F", "name": "Access & Authorization", "weight": 1.2},
+    {"code": "G", "name": "Continuity & Backup", "weight": 1.0},
+    {"code": "H", "name": "Compliance", "weight": 1.4}
+  ],
+  "default_weights": {
+    "private_sector": {"A":1.2,"B":1.1,"C":1.0,"D":0.9,"E":1.3,"F":1.2,"G":1.0,"H":1.4},
+    "public_sector": {"A":1.4,"B":1.0,"C":1.1,"D":0.8,"E":1.2,"F":1.3,"G":1.1,"H":1.5}
+  },
+  "item_statuses": ["Available","Partial","Missing","Out of Scope","Not Provided"],
+  "critical_rules": [
+    {"id":"CR-001","description":"Delegation of Authority present & current","category":"A","impact":"critical","stop_condition":true},
+    {"id":"CR-002","description":"Audit logs for critical systems available","category":"E","impact":"high","stop_condition":false}
+  ],
+  "thresholds": {"go":75,"go_with_caution":50,"no_go":0},
+  "evidence_requirements": {
+    "A": ["DelegationOfAuthority","OrgChart"],
+    "E": ["SystemLogs","AccessLogs"]
+  },
+  "validation_rules": [
+    {"id":"V-001","description":"All critical rules must be evaluated","severity":"high"}
+  ],
+  "stop_conditions": [
+    {"id":"SC-001","description":"Missing Delegation of Authority for public-sector cases","applies_to":"public_sector"}
+  ],
+  "report_gates": [
+    {"id":"RG-DRS","description":"DRS must be computed and engine run recorded before report generation"}
+  ]
+}
