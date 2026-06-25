@@ -39,3 +39,13 @@ secrets.yaml
 
 # copy of .git folder from upstream
 .git
+
+# Local-only sensitive files
+._PT-OSS_Original DATA/
+PT-OSS_HealthCheck_Studio_Architecture.md
+PT-OSS_HealthCheck_Studio_Development_Plan.md
+PT-OSS_HealthCheck_Studio_Foundation_Pack.md
+PT-OSS_HealthCheck_Studio_Phase1_Backlog.md
+PT-OSS_MASTER_STANDARD.md
+oss.pt
+
