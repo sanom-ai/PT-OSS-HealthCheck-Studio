@@ -1,7 +1,7 @@
 # PT-OSS HealthCheck Studio
 
 **Platform Audit & Compliance for Enterprise Workflows — v0.1.0 (Pre‑Phase Foundations)**
-
+PT-OSS HealthCheck Studio is an Evidence-to-Care Platform that connects to existing document repositories and transforms organizational evidence into scored, traceable, and certifiable health-check reports. It is not a document management system
 ---
 
 ## ภาพรวมผลิตภัณฑ์
@@ -12,6 +12,15 @@
 - **ประมวลผลและแยกข้อมูล**: อ่านเอกสาร (PDF, Word, อื่นๆ) และแยกข้อมูลโครงสร้างที่ปฏิบัติตามกฎ
 - **ประเมินความเชื่อถือได้**: ใช้การตรวจสอบหลายระดับ (tier-based validation) เพื่อให้คะแนนความน่าเชื่อถือ
 - **วัฏจักรการทบทวน**: จัดการกระบวนการ peer review และการอนุมัติอย่างมีประสิทธิภาพ
+
+## 3 connector tiers
+
+Tier A (Native DCC): ต่อ API กับระบบ DCC ที่มี metadata ครบ — ไม่ copy ไฟล์
+Tier B (Cloud Folder): SharePoint/Drive ผ่าน OAuth — ต้อง human confirm
+Tier C (Portable): ZIP/manual upload — confidence โดนลดอัตโนมัติ
+
+## Evidence Index 
+เก็บ minimum 16 fields: evidence ID, source type, hash, PT-OSS category A-H, owner, approver, revision, effective date, quality, confidence impact
 
 ### กรณีการใช้งาน (Use Cases)
 
@@ -39,18 +48,6 @@
 - **PTIL** (Platform Traceability & Integrity Layer) เพื่อความโปร่งใสในการตัดสินใจ
 
 ---
-
-## สำคัญ: ไฟล์ที่ลบไปคืออะไร
-
-ในระหว่างการจัดเตรียมพื้นฐาน ได้ลบไฟล์ที่มีความลับออกจาก Git history:
-- ข้อมูลการตั้งค่า database จริง
-- API keys / credentials ตัวอย่าง
-- ข้อมูล compliance templates เฉพาะลูกค้า
-- Configuration ของบริษัทตัวอย่างเดิม
-
-ไฟล์เหล่านี้ควรจัดเก็บผ่าน **secret management** ขององค์กร (HashiCorp Vault, AWS Secrets Manager, ฯลฯ) เมื่อปล่อยสู่ production
-
-ชื่อบริษัทภายนอกถูกแทนที่ด้วย "ExampleOrg" เพื่อความเป็นกลาง
 
 ## การเริ่มต้นพัฒนาแบบเร็ว
 
@@ -110,6 +107,15 @@ API จะทำงานที่ `http://localhost:8000` — เข้า `/do
 - **Extractors (`src/ptoss/connectors/`)**: Tier-based document extraction (PDF, Word, images)
 - **Reporting (`src/ptoss/reporting.py`)**: Generate assessment reports (plain text, DOCX)
 
+### Core value chain
+Evidence Sources → Connector → Evidence Index → Mapping & Review
+→ DRS Gate → Diagnostic Engine → Validation → Report Studio
+→ Certification Portal → Certified Report Package
+
+### Diagnostic Engine
+
+Constraint Audit, Force Map, KPIR/Continuity, ASP 6-Test, Public Sector Add-on, Care Path, Certification Decision
+ใช้ hybrid rule: deterministic core + decision tables + JSON rules + Python functions + LLM แค่ช่วย draft
 ---
 
 ## สภาพแวดล้อม & การตั้งค่า
@@ -148,9 +154,6 @@ LOG_LEVEL=INFO
 PROMETHEUS_ENABLED=true
 JAEGER_ENDPOINT=http://jaeger:6831
 ```
-
-**เตือน**: ห้ามใส่ credentials ลงใน `.env` หรือ code — ใช้ secret manager เท่านั้น
-
 ---
 
 ## การพัฒนาและสนับสนุน
@@ -209,32 +212,20 @@ pytest --cov=src --cov-report=html
 
 ## แผนการพัฒนา (Roadmap)
 
-### Pre‑Phase ✅ (v0.1.0 — เสร็จสมบูรณ์)
+Pre-Phase (3-4 สัปดาห์): 15 ADRs, NFR, risk register
+Pre‑Phase ✅ (v0.1.0 — เสร็จสมบูรณ์)
 - ✅ ADRs และสถาปัตยกรรม
 - ✅ PTIL schemas v0.1.0
 - ✅ Rule package v0.1.0
 - ✅ Unit tests (19 test cases)
 - ✅ CI/CD pipeline
-
-### Phase 1 (Q3 2026)
-- [ ] Database schema และ migrations (PostgreSQL RLS)
-- [ ] Tenant isolation & multi-tenancy
-- [ ] Complete API endpoints (auth, document mgmt, validation)
-- [ ] Integration tests
-- [ ] Docker compose setup
-
-### Phase 2 (Q4 2026)
-- [ ] Document extraction library (pdfplumber, python-docx, Tesseract OCR)
-- [ ] Advanced rule engine with conditional logic
-- [ ] Workflow engine (Temporal integration)
-- [ ] Audit trail & compliance logging
-
-### Phase 3 (2027)
-- [ ] UI Dashboard (Next.js frontend)
-- [ ] Advanced analytics & reporting
-- [ ] AI-powered compliance suggestions
-- [ ] Multi-language support
-- [ ] Enterprise deployment (Kubernetes, Helm)
+Phase 1 (สัปดาห์ 5-18): DRS Core MVP, Tier B+C connectors, Evidence Review Board
+Phase 2: Consultant Workbench, metadata overlay
+Phase 3: Diagnostic Engine ครบทุก metric
+Phase 4: DCC native integration, multi-tenant scale, penetration test
+Phase 5-6: Certification Portal, continuous monitoring
+Phase 7: AI Model Evolution — PT-OSS Gen 2 model, PTIL v1.0
+Phase 8: Production hardening, billing, i18n, WCAG 2.2
 
 ### Backlog
 - [ ] Real-time notifications & webhooks
@@ -243,6 +234,13 @@ pytest --cov=src --cov-report=html
 - [ ] Integration with external compliance databases
 - [ ] Mobile app
 
+## หลักการ non-negotiable ที่น่าสนใจ:
+repository-first, not upload-first
+human-in-the-loop เมื่อ metadata อ่อน
+DRS ต้องรันก่อน diagnostic เสมอ
+missing data ลด confidence — ไม่เพิ่มคะแนน
+stop conditions บังคับอัตโนมัติ ห้าม bypass ผ่าน UI
+certification ห้าม self-certify
 ---
 
 ## ความปลอดภัย
