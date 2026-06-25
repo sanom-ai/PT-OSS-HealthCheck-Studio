@@ -10,7 +10,8 @@ requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115",
   "pydantic>=2.7",
-  "uvicorn[standard]>=0.30"
+  "uvicorn[standard]>=0.30",
+  "python-docx>=0.8"
 ]
 
 [project.optional-dependencies]
