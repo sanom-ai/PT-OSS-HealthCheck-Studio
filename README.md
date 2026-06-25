@@ -13,7 +13,9 @@
 ## 3 connector tiers
 
 Tier A (Native DCC): ต่อ API กับระบบ DCC ที่มี metadata ครบ — ไม่ copy ไฟล์
+
 Tier B (Cloud Folder): SharePoint/Drive ผ่าน OAuth — ต้อง human confirm
+
 Tier C (Portable): ZIP/manual upload — confidence โดนลดอัตโนมัติ
 
 ## Evidence Index 
